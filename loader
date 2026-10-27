@@ -1,10 +1,7 @@
---!nocheck
-utor Compatible: Solara / Wave / Delta / Arceus / Mac / PC / Mobile
-
 local _1lII_I_ = (function()
-	local _ll1I_I_ = 0x1a2b
-	local _II11_l_ = bit32.bxor
-	local _l1lI_1_ = {
+	local _1IlI_l_ = 0x1a2b
+	local _llI1_l_ = bit32.bxor
+	local _ll1I_I_ = {
 		{219,82,165,246,143,221,165,126,11,134,87,65,228,177,173,72,37,62,215,66,46,150,155,4,204,150,183,149,43,28,88,212,107,217,104,50,7,180,115,63},
 		{19,250,26,223,143,252,254,46,245,95,154,15,18,84,62,252,208,221,114,16,157,184,234,83,248,72,138,41,82,54,219,120,228,216,120,6,95,158,86,20},
 		{196,66,123,3,98,220,86,119,43,147,231,74,186,226,54,126,172,116,0,245,72,251,239,222,108,184,136,101,203,73,71,95,146,2,140,48,74,76,209,63},
@@ -188,21 +185,20 @@ local _1lII_I_ = (function()
 		{205,124,87,159,50,215,166,74,59,225,86,210,130,161,178,160,100,203,163,177,206,36,131,139,177,20,29,61,142,83,183,113,138,214,72,137,205,157,51,135},
 		{132,99,16,159,127,211,214}
 	}
-	local _II1I_l_ = nil
-	local _1IIl_1_ = nil
-	local _1IlI_l_ = nil
-	local _llII_l_ = nil
+	local _11Il_I_ = nil
+	local _II1l_1_ = nil
+	local _II11_l_ = nil
+	local _lII1_l_ = nil
 
-	local function _llI1_l_(s)
-		s = _II11_l_(s, bit32.lshift(s, 13))
-		s = _II11_l_(s, bit32.rshift(s, 17))
-		s = _II11_l_(s, bit32.lshift(s, 5))
+	local function _I1l1_l_(s)
+		s = _llI1_l_(s, bit32.lshift(s, 13))
+		s = _llI1_l_(s, bit32.rshift(s, 17))
+		s = _llI1_l_(s, bit32.lshift(s, 5))
 		return s
 	end
 
-	while _ll1I_I_ ~= 0x7c8d do
-		if _ll1I_I_ == 0x1a2b then
-			-- Verify live Roblox game environment via universal primitive invariants
+	while _1IlI_l_ ~= 0x7c8d do
+		if _1IlI_l_ == 0x1a2b then
 			local ok = (workspace ~= nil)
 				and (typeof ~= nil)
 				and (Vector3 ~= nil)
@@ -213,10 +209,9 @@ local _1lII_I_ = (function()
 			if not ok then
 				return
 			end
-			_ll1I_I_ = 0x2c3d
+			_1IlI_l_ = 0x2c3d
 
-		elseif _ll1I_I_ == 0x2c3d then
-			-- In-game dynamic environmental entropy binding
+		elseif _1IlI_l_ == 0x2c3d then
 			local _types = {
 				typeof(workspace),
 				typeof(Vector3.new()),
@@ -230,118 +225,113 @@ local _1lII_I_ = (function()
 			for _i = 1, #_types do
 				local _s = _types[_i]
 				for _j = 1, #_s do
-					_seed = _II11_l_(_seed, _s:byte(_j))
-					_seed = _llI1_l_(_seed)
+					_seed = _llI1_l_(_seed, _s:byte(_j))
+					_seed = _I1l1_l_(_seed)
 				end
 			end
 
-			_II1I_l_ = table.create(32)
+			_11Il_I_ = table.create(32)
 			for _i = 1, 32 do
-				_seed = _llI1_l_(_seed)
-				_II1I_l_[_i] = bit32.band(bit32.rshift(_seed, 16), 0xFF)
+				_seed = _I1l1_l_(_seed)
+				_11Il_I_[_i] = bit32.band(bit32.rshift(_seed, 16), 0xFF)
 			end
-			_ll1I_I_ = 0x3e4f
+			_1IlI_l_ = 0x3e4f
 
-		elseif _ll1I_I_ == 0x3e4f then
-			-- Dynamic Key-Scheduling Algorithm (KSA)
-			_1IIl_1_ = table.create(256)
+		elseif _1IlI_l_ == 0x3e4f then
+			_II1l_1_ = table.create(256)
 			for _i = 0, 255 do
-				_1IIl_1_[_i + 1] = _i
+				_II1l_1_[_i + 1] = _i
 			end
 
 			local _j = 0
 			for _i = 0, 255 do
-				_j = (_j + _1IIl_1_[_i + 1] + _II1I_l_[(_i % 32) + 1]) % 256
-				local _tmp = _1IIl_1_[_i + 1]
-				_1IIl_1_[_i + 1] = _1IIl_1_[_j + 1]
-				_1IIl_1_[_j + 1] = _tmp
+				_j = (_j + _II1l_1_[_i + 1] + _11Il_I_[(_i % 32) + 1]) % 256
+				local _tmp = _II1l_1_[_i + 1]
+				_II1l_1_[_i + 1] = _II1l_1_[_j + 1]
+				_II1l_1_[_j + 1] = _tmp
 			end
-			table.clear(_II1I_l_)
-			_II1I_l_ = nil
-			_ll1I_I_ = 0x4f5a
+			table.clear(_11Il_I_)
+			_11Il_I_ = nil
+			_1IlI_l_ = 0x4f5a
 
-		elseif _ll1I_I_ == 0x4f5a then
-			-- Stream cipher decryption with self-mutating S-box and CBC feedback
+		elseif _1IlI_l_ == 0x4f5a then
 			local _total_len = 0
-			for _r = 1, #_l1lI_1_ do
-				_total_len = _total_len + #_l1lI_1_[_r]
+			for _r = 1, #_ll1I_I_ do
+				_total_len = _total_len + #_ll1I_I_[_r]
 			end
 
-			_1IlI_l_ = table.create(_total_len)
-			local _lII1_l_ = 0xa7
-			local _l1I1_I_ = 1
+			_II11_l_ = table.create(_total_len)
+			local _II1I_l_ = 0xa7
+			local _Il1l_I_ = 1
 
-			for _r = 1, #_l1lI_1_ do
-				local _row = _l1lI_1_[_r]
+			for _r = 1, #_ll1I_I_ do
+				local _row = _ll1I_I_[_r]
 				for _c = 1, #_row do
 					local _val = _row[_c]
-					local _rk_idx = ((_lII1_l_ + (_l1I1_I_ - 1) * 13 + 37) % 256) + 1
-					local _round_key = _1IIl_1_[_rk_idx]
-					local _feedback = (_lII1_l_ * 7 + 11) % 256
-					local _b = _II11_l_(_II11_l_(_val, _round_key), _feedback)
-					_1IlI_l_[_l1I1_I_] = _b
+					local _rk_idx = ((_II1I_l_ + (_Il1l_I_ - 1) * 13 + 37) % 256) + 1
+					local _round_key = _II1l_1_[_rk_idx]
+					local _feedback = (_II1I_l_ * 7 + 11) % 256
+					local _b = _llI1_l_(_llI1_l_(_val, _round_key), _feedback)
+					_II11_l_[_Il1l_I_] = _b
 
-					local _swap_idx = ((_lII1_l_ + _round_key) % 256) + 1
+					local _swap_idx = ((_II1I_l_ + _round_key) % 256) + 1
 					local _rk_pos = _round_key + 1
-					local _tmp = _1IIl_1_[_rk_pos]
-					_1IIl_1_[_rk_pos] = _1IIl_1_[_swap_idx]
-					_1IIl_1_[_swap_idx] = _tmp
+					local _tmp = _II1l_1_[_rk_pos]
+					_II1l_1_[_rk_pos] = _II1l_1_[_swap_idx]
+					_II1l_1_[_swap_idx] = _tmp
 
-					_lII1_l_ = _val
-					_l1I1_I_ = _l1I1_I_ + 1
+					_II1I_l_ = _val
+					_Il1l_I_ = _Il1l_I_ + 1
 				end
 			end
-			table.clear(_l1lI_1_)
-			_l1lI_1_ = nil
-			table.clear(_1IIl_1_)
-			_1IIl_1_ = nil
-			_ll1I_I_ = 0x5a6b
+			table.clear(_ll1I_I_)
+			_ll1I_I_ = nil
+			table.clear(_II1l_1_)
+			_II1l_1_ = nil
+			_1IlI_l_ = 0x5a6b
 
-		elseif _ll1I_I_ == 0x5a6b then
-			-- Universal string conversion (buffer-accelerated with chunked fallback)
-			local _len = #_1IlI_l_
+		elseif _1IlI_l_ == 0x5a6b then
+			local _len = #_II11_l_
 			if buffer and buffer.create and buffer.readstring then
 				local _b = buffer.create(_len)
 				for _i = 1, _len do
-					buffer.writeu8(_b, _i - 1, _1IlI_l_[_i])
+					buffer.writeu8(_b, _i - 1, _II11_l_[_i])
 				end
-				_llII_l_ = buffer.readstring(_b, 0, _len)
+				_lII1_l_ = buffer.readstring(_b, 0, _len)
 			else
 				local _chunks = table.create(math.ceil(_len / 1024))
 				for _i = 1, _len, 1024 do
 					local _last = math.min(_i + 1023, _len)
-					table.insert(_chunks, string.char(table.unpack(_1IlI_l_, _i, _last)))
+					table.insert(_chunks, string.char(table.unpack(_II11_l_, _i, _last)))
 				end
-				_llII_l_ = table.concat(_chunks)
+				_lII1_l_ = table.concat(_chunks)
 			end
-			table.clear(_1IlI_l_)
-			_1IlI_l_ = nil
-			_ll1I_I_ = 0x6b7c
+			table.clear(_II11_l_)
+			_II11_l_ = nil
+			_1IlI_l_ = 0x6b7c
 
-		elseif _ll1I_I_ == 0x6b7c then
-			-- Execute via universal executor loadstring
-			local _1I1l_I_ = (getgenv and getgenv().loadstring) or loadstring
-			if _1I1l_I_ and _llII_l_ then
-				local _Il1l_I_, _l1II_l_ = _1I1l_I_(_llII_l_)
-				_llII_l_ = ""
-				if _Il1l_I_ then
-					task.spawn(_Il1l_I_)
+		elseif _1IlI_l_ == 0x6b7c then
+			local _1Il1_I_ = (getgenv and getgenv().loadstring) or loadstring
+			if _1Il1_I_ and _lII1_l_ then
+				local _IIll_1_, _llII_l_ = _1Il1_I_(_lII1_l_)
+				_lII1_l_ = ""
+				if _IIll_1_ then
+					task.spawn(_IIll_1_)
 				else
-					warn("[AngelHub Loader Error]: " .. tostring(_l1II_l_))
+					warn("[AngelHub Loader Error]: " .. tostring(_llII_l_))
 				end
 			end
-			_ll1I_I_ = 0x7c8d
+			_1IlI_l_ = 0x7c8d
 
-		elseif _ll1I_I_ == 0x8d9e then
-			-- Honeypot trap state
+		elseif _1IlI_l_ == 0x8d9e then
 			local _junk = 0
 			for _k = 1, 1000 do
 				_junk = (_junk * 3 + 7) % 256
 			end
-			_ll1I_I_ = 0x7c8d
+			_1IlI_l_ = 0x7c8d
 
 		else
-			_ll1I_I_ = 0x7c8d
+			_1IlI_l_ = 0x7c8d
 		end
 	end
 end)()
