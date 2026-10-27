@@ -1,7 +1,4 @@
--- [AngelHub Security Layer: VM + Custom Cryptographic Flattening]
--- Direct execution compatible across all standard Luau runtimes
--- Engine: Lunar/Kuroko Virtual Machine v2.4
-
+-- loader типо --
 local _0xM_726B = (function()
 	local _bit = bit32 or bit or {
 		bxor = function(a, b)
