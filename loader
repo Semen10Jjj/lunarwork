@@ -1,4 +1,3 @@
--- loader типо --
 --!nocheck
 local _0xM_12F0 = (function()
 	local _0xEnv_E6EA = (getfenv and getfenv()) or _G
